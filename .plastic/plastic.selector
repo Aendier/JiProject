@@ -1,0 +1,4 @@
+repository "JiProject@wechat_os_qy0z4kalsxnlfuxecvh00zif4@cloud.cn"
+  path "/"
+    br "/main"
+    co "/main"
