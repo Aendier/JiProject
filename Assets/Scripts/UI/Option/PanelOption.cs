@@ -7,14 +7,13 @@ using UnityEngine.UI;
 
 public abstract  class PanelOption : MonoBehaviour
 {
-    public OptionType type;
-
     protected Transform hightLightItem;
     protected Outline oL;
     protected virtual void Awake()
     {
         oL = hightLightItem.gameObject.AddComponent<Outline>();
-        oL.effectColor = Color.red;
+        oL.effectDistance = new Vector2(5, 5);
+        oL.effectColor = Color.black;
         oL.enabled = false;
     }
 
@@ -23,12 +22,18 @@ public abstract  class PanelOption : MonoBehaviour
 
     public virtual void OnChoose() 
     {
-        oL.enabled = true;
+        if(oL != null)
+        {
+            oL.enabled = true;
+        }
     }
 
     public virtual void OnCancleChoose()
     {
-        oL.enabled = false;
+        if (oL != null)
+        {
+            oL.enabled = false;
+        }
     }
     public abstract void ChangeValue(float value);
 }

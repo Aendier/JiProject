@@ -51,7 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09d3e14099aeae499938fe6112df186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
 --- !u!222 &2327150828192948658
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -193,7 +192,7 @@ MonoBehaviour:
   options: []
   phoneBtn: {fileID: 1824485529136957656}
   ACBtn: {fileID: 1397421238300951974}
-  NaviBtn: {fileID: 7535674239490921157}
+  MapBtn: {fileID: 7535674239490921157}
   MusicBtn: {fileID: 7575117893130124017}
   RadioBtn: {fileID: 3546794278727349850}
 --- !u!222 &6447448310515332311
@@ -260,7 +259,7 @@ GameObject:
   - component: {fileID: 162461453531592792}
   - component: {fileID: 7535674239490921157}
   m_Layer: 5
-  m_Name: NaviBtn
+  m_Name: MapBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -297,7 +296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09d3e14099aeae499938fe6112df186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
 --- !u!222 &3675527241992553496
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -360,7 +358,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.6981132, g: 0.32710332, b: 0.32710332, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -431,7 +429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09d3e14099aeae499938fe6112df186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
 --- !u!222 &5223017194021111320
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -565,7 +562,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09d3e14099aeae499938fe6112df186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
 --- !u!222 &6250935380890684300
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -699,7 +695,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09d3e14099aeae499938fe6112df186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
 --- !u!222 &5625925048610016930
 CanvasRenderer:
   m_ObjectHideFlags: 0

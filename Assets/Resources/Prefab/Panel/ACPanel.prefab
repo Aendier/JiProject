@@ -431,7 +431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a409ac13ab05f6d489daff7b42c88f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
 --- !u!114 &8384246042331503409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,7 +534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09d3e14099aeae499938fe6112df186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
 --- !u!222 &2110143215267565985
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1194,9 +1192,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6989702475400614666}
+  - component: {fileID: 6846236892156394973}
   - component: {fileID: 5750445833878081179}
   m_Layer: 5
-  m_Name: Switch
+  m_Name: SwitchTog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1223,6 +1222,18 @@ RectTransform:
   m_AnchoredPosition: {x: -456, y: 59}
   m_SizeDelta: {x: 94.9123, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6846236892156394973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294466559591089266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f98e7599bb2e046bb3c2b3b5db77d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5750445833878081179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1323,7 +1334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a409ac13ab05f6d489daff7b42c88f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
 --- !u!114 &8367966912273108361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,7 +1534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09d3e14099aeae499938fe6112df186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
 --- !u!222 &3124269057666837543
 CanvasRenderer:
   m_ObjectHideFlags: 0

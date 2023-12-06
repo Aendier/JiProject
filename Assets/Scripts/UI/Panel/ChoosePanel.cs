@@ -7,13 +7,13 @@ public class ChoosePanel : BasePanel
 {
     public Button phoneBtn;
     public Button ACBtn;
-    public Button NaviBtn;
+    public Button MapBtn;
     public Button MusicBtn;
     public Button RadioBtn;
 
     private PhonePanel phonePanel;
     private ACPanel acPanel;
-    private NaviPanel naviPanel;
+    private MapPanel mapPanel;
     private MusicPanel musicPanel;
     private RadioPanel radioPanel;
 
@@ -37,12 +37,12 @@ public class ChoosePanel : BasePanel
             HideMe(null);
         });
 
-        NaviBtn.onClick.AddListener(() =>
+        MapBtn.onClick.AddListener(() =>
         {
-            if (naviPanel != null)
-                naviPanel.ShowMe();
+            if (mapPanel != null)
+                mapPanel.ShowMe();
             else
-                naviPanel = UIManager.Instance.ShowPanel<NaviPanel>();
+                mapPanel = UIManager.Instance.ShowPanel<MapPanel>();
             HideMe(null);
         });
 
