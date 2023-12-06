@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8469066553766125037}
-  - component: {fileID: 382110745647337906}
+  - component: {fileID: 3536924324336750306}
   - component: {fileID: 2766285723982565931}
   - component: {fileID: 1248267640586533756}
   - component: {fileID: 940396399843285067}
@@ -194,7 +194,7 @@ RectTransform:
   m_AnchoredPosition: {x: -366, y: -33.639}
   m_SizeDelta: {x: 79.3723, y: 67.2779}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &382110745647337906
+--- !u!114 &3536924324336750306
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,9 +203,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6490841832829295553}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04e4dc40a24e4464f860bbc2f22b4f6c, type: 3}
+  m_Script: {fileID: 11500000, guid: d09d3e14099aeae499938fe6112df186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!222 &2766285723982565931
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -297,9 +298,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2571647820029249235}
+  - component: {fileID: 2303306235785241811}
   - component: {fileID: 3635513457807107652}
   - component: {fileID: 5012337191331546786}
-  - component: {fileID: 2303306235785241811}
   - component: {fileID: 8656545234306884562}
   m_Layer: 5
   m_Name: MenuPanel
@@ -329,6 +330,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2303306235785241811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8268048031073436523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220889364a62d4d46903b4b6812341b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  options: []
+  btnMenu: {fileID: 940396399843285067}
 --- !u!222 &3635513457807107652
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -367,20 +382,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2303306235785241811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8268048031073436523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 220889364a62d4d46903b4b6812341b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  options: []
-  btnMenu: {fileID: 940396399843285067}
 --- !u!225 &8656545234306884562
 CanvasGroup:
   m_ObjectHideFlags: 0
