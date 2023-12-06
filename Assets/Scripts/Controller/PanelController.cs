@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ public class PanelController : MonoBehaviour
 {
     public static PanelController intstance;
 
+    public BasePanel previousPanel;
     public BasePanel currentPanel;
 
     public int currentOptionIndex;
@@ -28,11 +30,6 @@ public class PanelController : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            //返回主界面
-        }
-
         switch (state)
         {
             case ChooseState.Selecting:
@@ -52,19 +49,24 @@ public class PanelController : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    Debug.Log("Selecting Return");
+                    Debug.Log("Selecting Enter");
                     EnterOption();
+                }
+
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    ReturnPanel();
                 }
                 break;
             case ChooseState.Slide:
                 if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W))
                 {
-                    
+                    currentOption.ChangeValue(-3);
                 }
 
                 if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
                 {
-                    Debug.Log("上一个");
+                    currentOption.ChangeValue(+3);
                     currentOptionIndex++;
                     ChooseOption(currentOptionIndex);
                 }
@@ -74,12 +76,31 @@ public class PanelController : MonoBehaviour
                     EnterOption();
                 }
 
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    ReturnOption();
+                }
                 break;
         }
     }
 
+    public void ReturnPanel()
+    {
+        if(previousPanel != null)
+        {
+            previousPanel.ShowMe();
+            previousPanel.HideMe(null);
+        }
+    }
+
+    public void ReturnOption()
+    {
+        state = ChooseState.Selecting;
+    }
     public void SetCurrentPanel(BasePanel panel)
     {
+        currentOptionIndex = 0;
+        previousPanel = currentPanel;
         currentPanel = panel;
         currentOption = currentPanel.options[0];
     }
@@ -112,6 +133,7 @@ public class PanelController : MonoBehaviour
     public void EnterOption()
     {
         if (currentOption == null) return;
+        Debug.Log("Enter Option");
         currentOption.OnEnter();
     }
 }

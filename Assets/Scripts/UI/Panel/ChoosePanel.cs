@@ -11,32 +11,57 @@ public class ChoosePanel : BasePanel
     public Button MusicBtn;
     public Button RadioBtn;
 
+    private PhonePanel phonePanel;
+    private ACPanel acPanel;
+    private NaviPanel naviPanel;
+    private MusicPanel musicPanel;
+    private RadioPanel radioPanel;
+
     public override void Init()
     {
         phoneBtn.onClick.AddListener(() =>
         {
-            UIManager.Instance.ShowPanel<PhonePanel>();
-            UIManager.Instance.HidePanel<ChoosePanel>();
+            if (phonePanel != null)
+                phonePanel.ShowMe();
+            else
+                phonePanel = UIManager.Instance.ShowPanel<PhonePanel>();
+            HideMe(null);
         });
+
         ACBtn.onClick.AddListener(() =>
         {
-            UIManager.Instance.ShowPanel<ACPanel>();
-            UIManager.Instance.HidePanel<ChoosePanel>();
+            if (acPanel != null)
+                acPanel.ShowMe();
+            else
+                acPanel = UIManager.Instance.ShowPanel<ACPanel>();
+            HideMe(null);
         });
+
         NaviBtn.onClick.AddListener(() =>
         {
-            UIManager.Instance.ShowPanel<NaviPanel>();
-            UIManager.Instance.HidePanel<ChoosePanel>();
+            if (naviPanel != null)
+                naviPanel.ShowMe();
+            else
+                naviPanel = UIManager.Instance.ShowPanel<NaviPanel>();
+            HideMe(null);
         });
+
         MusicBtn.onClick.AddListener(() =>
         {
-            UIManager.Instance.ShowPanel<MusicPanel>();
-            UIManager.Instance.HidePanel<ChoosePanel>();
+            if (musicPanel != null)
+                musicPanel.ShowMe();
+            else
+                musicPanel = UIManager.Instance.ShowPanel<MusicPanel>();
+            HideMe(null);
         });
+
         RadioBtn.onClick.AddListener(() =>
         {
-            UIManager.Instance.ShowPanel<RadioPanel>();
-            UIManager.Instance.HidePanel<ChoosePanel>();
+            if (radioPanel != null)
+                radioPanel.ShowMe();
+            else
+                radioPanel = UIManager.Instance.ShowPanel<RadioPanel>();
+            HideMe(null);
         });
     }
 

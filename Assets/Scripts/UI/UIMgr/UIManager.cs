@@ -27,6 +27,7 @@ public class UIManager
     //显示面板
     public T ShowPanel<T>() where T : BasePanel
     {
+        Debug.Log("Show~~~"+typeof(T).Name);
         //我们只需要保证 泛型T的类型 和 面板明 一致  定一个这样的规则 就非常方便我们的使用
         string panelName = typeof(T).Name;
 
@@ -63,6 +64,7 @@ public class UIManager
                 panelDic[panelName].HideMe(() =>
                 {
                     //面板 淡出成功后 希望删除面板
+                    Debug.Log("删除面板____" + typeof(T).Name);
                     GameObject.Destroy(panelDic[panelName].gameObject);
                     //删除面板后 从 字典中移除
                     panelDic.Remove(panelName);

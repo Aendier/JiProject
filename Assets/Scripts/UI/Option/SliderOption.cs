@@ -8,7 +8,7 @@ public class SliderOption : PanelOption
 {
     private Slider slider;
 
-    protected virtual void Awake()
+    protected override void Awake()
     {
         slider = GetComponent<Slider>();
         hightLightItem = TransformHelper.GetChild(transform, "Handle");
@@ -20,11 +20,11 @@ public class SliderOption : PanelOption
         PanelController.intstance.state = ChooseState.Slide;
     }
 
-    public void ChangeValue(float value)
+    public override void ChangeValue(float value)
     {
         if (slider != null)
         {
-            slider.value += value;
+            slider.value += value/100;
         }
     }
 }

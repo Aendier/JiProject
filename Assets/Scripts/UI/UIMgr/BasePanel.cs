@@ -44,9 +44,10 @@ using UnityEngine.Events;
     /// </summary>
     public virtual void ShowMe()
     {
-        PanelController.intstance.SetCurrentPanel(this);
-        PanelController.intstance.ChooseOption(0);
+        Debug.Log("Show---" + name);
         isShow = true;
+        PanelController.intstance.SetCurrentPanel(this);
+        PanelController.intstance.ChooseOption(0);   
         canvasGroup.alpha = 0;
     }
     /// <summary>
@@ -54,6 +55,7 @@ using UnityEngine.Events;
     /// </summary>
     public virtual void HideMe(UnityAction callBack)
     {
+        Debug.Log("Hide---" + name);
         isShow = false;
         canvasGroup.alpha = 1;
         //记录传入的 当淡出成功后会执行的函数

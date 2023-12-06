@@ -358,10 +358,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9157f9d28c9d9043b355ece40b42920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  previousPanel: {fileID: 0}
   currentPanel: {fileID: 0}
   currentOptionIndex: 0
   currentOption: {fileID: 0}
   cursor: {fileID: 7873492303827867418}
+  state: 0
 --- !u!4 &710965161
 Transform:
   m_ObjectHideFlags: 0
@@ -412,7 +414,7 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2

@@ -30,6 +30,7 @@ public abstract  class PanelOption : MonoBehaviour
     {
         oL.enabled = false;
     }
+    public abstract void ChangeValue(float value);
 }
 
 public enum OptionType

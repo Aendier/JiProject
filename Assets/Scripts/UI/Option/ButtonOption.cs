@@ -21,4 +21,7 @@ public class ButtonOption : PanelOption
         btn.onClick?.Invoke();
     }
 
+    public override void ChangeValue(float value)
+    {
+    }
 }
