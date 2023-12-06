@@ -1115,11 +1115,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9210383180808261079}
+  - {fileID: 2407299625733284750}
   - {fileID: 1845869102418163419}
   - {fileID: 3018791819421413494}
   - {fileID: 2115824736306100498}
-  - {fileID: 2407299625733284750}
+  - {fileID: 9210383180808261079}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1140,10 +1140,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   options: []
+  defaultOptionIndex: 0
   SwitchTog: {fileID: 4139424411410384829}
-  checkRouteBtn: {fileID: 7485712768241389266}
-  historicalRouteBtn: {fileID: 4360305417317888463}
-  otherSettingBtn: {fileID: 314000967201092420}
+  checkRouteBtn: {fileID: 6275415063803861775}
+  historicalRouteBtn: {fileID: 6348773773532175479}
+  otherSettingBtn: {fileID: 8881748419008315685}
   richnessSld: {fileID: 8367966912273108361}
 --- !u!222 &4804944860897074351
 CanvasRenderer:

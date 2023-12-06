@@ -17,6 +17,8 @@ using UnityEngine.Events;
     private UnityAction hideCallBack;
 
     public PanelOption[] options;
+
+    public int defaultOptionIndex = 0;
     
     protected virtual void Awake()
     {   //一开始获取面板上 挂载的组件 如果没有 我们通过代码 为它添加一个
@@ -27,6 +29,10 @@ using UnityEngine.Events;
         }
 
         options = GetComponentsInChildren<PanelOption>();
+        if (defaultOptionIndex <0 || defaultOptionIndex >= options.Length)
+        {
+            defaultOptionIndex = 0;
+        }
     }
     // Start is called before the first frame update
     protected virtual void Start()

@@ -67,8 +67,6 @@ public class PanelController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
                 {
                     currentOption.ChangeValue(+3);
-                    currentOptionIndex++;
-                    ChooseOption(currentOptionIndex);
                 }
 
                 if (Input.GetKeyDown(KeyCode.Return))
@@ -99,10 +97,10 @@ public class PanelController : MonoBehaviour
     }
     public void SetCurrentPanel(BasePanel panel)
     {
-        currentOptionIndex = 0;
+        currentOptionIndex = panel.defaultOptionIndex;
         previousPanel = currentPanel;
         currentPanel = panel;
-        currentOption = currentPanel.options[0];
+        currentOption = currentPanel.options[panel.defaultOptionIndex];
     }
 
     public void ChooseOption(int index)

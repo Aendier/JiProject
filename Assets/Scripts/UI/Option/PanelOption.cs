@@ -9,10 +9,13 @@ public abstract  class PanelOption : MonoBehaviour
 {
     protected Transform hightLightItem;
     protected Outline oL;
+
+    public event Action onChoose;
+    public event Action onCancleChoose;
     protected virtual void Awake()
     {
         oL = hightLightItem.gameObject.AddComponent<Outline>();
-        oL.effectDistance = new Vector2(5, 5);
+        oL.effectDistance = new Vector2(3, 3);
         oL.effectColor = Color.black;
         oL.enabled = false;
     }
@@ -26,6 +29,7 @@ public abstract  class PanelOption : MonoBehaviour
         {
             oL.enabled = true;
         }
+        onChoose?.Invoke();
     }
 
     public virtual void OnCancleChoose()
@@ -34,6 +38,7 @@ public abstract  class PanelOption : MonoBehaviour
         {
             oL.enabled = false;
         }
+        onCancleChoose?.Invoke();
     }
     public abstract void ChangeValue(float value);
 }

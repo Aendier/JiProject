@@ -7,9 +7,15 @@ public class ToggleOption : PanelOption
 {
     private Toggle toggle;
 
+    protected override void Awake()
+    {
+        toggle = GetComponent<Toggle>();
+        hightLightItem = TransformHelper.GetChild(transform, "Background");
+        base.Awake();
+    }
     public override void ChangeValue(float value)
     {
-        hightLightItem = TransformHelper.GetChild(transform, "Background");
+        
     }
 
     public override void OnEnter()

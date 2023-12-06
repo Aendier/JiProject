@@ -25,17 +25,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140081838323656667}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6991541330409170703}
+  m_Father: {fileID: 4616986051758280684}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -304, y: -131.00002}
-  m_SizeDelta: {x: 36.3946, y: 40.9714}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -21.549255, y: -1.9450226}
+  m_SizeDelta: {x: 36.394592, y: 40.9714}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6257802759554135627
 CanvasRenderer:
@@ -102,14 +102,14 @@ RectTransform:
   m_GameObject: {fileID: 694261269729427252}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3616999, y: 1.3616999, z: 1.3616999}
+  m_LocalScale: {x: 0.68084997, y: 0.68084997, z: 1.3616999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6991541330409170703}
+  m_Father: {fileID: 9210383180808261079}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 463, y: -63}
+  m_AnchoredPosition: {x: 187.95123, y: 0.020080566}
   m_SizeDelta: {x: 19.9189, y: 19.9189}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &775987267754505020
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 7514318184868888170}
   - component: {fileID: 8384246042331503409}
   m_Layer: 5
-  m_Name: SliderRichness
+  m_Name: RichnessSld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -412,6 +412,8 @@ RectTransform:
   - {fileID: 3128325020613816327}
   - {fileID: 8874919050882003958}
   - {fileID: 7503055446465549944}
+  - {fileID: 6950755564028211872}
+  - {fileID: 2100469326122307072}
   m_Father: {fileID: 6991541330409170703}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -496,7 +498,7 @@ GameObject:
   - component: {fileID: 8774319766512540053}
   - component: {fileID: 314000967201092420}
   m_Layer: 5
-  m_Name: OtherSetting
+  m_Name: OtherSettingBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1294,7 +1296,7 @@ GameObject:
   - component: {fileID: 7466813905380064617}
   - component: {fileID: 8367966912273108361}
   m_Layer: 5
-  m_Name: SliderAirVolume
+  m_Name: AirVolumeSld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1315,6 +1317,7 @@ RectTransform:
   - {fileID: 8185442612877077903}
   - {fileID: 5889796252273588919}
   - {fileID: 728757264380310683}
+  - {fileID: 618170509408627026}
   m_Father: {fileID: 6991541330409170703}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1416,14 +1419,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 618170509408627026}
-  - {fileID: 9210383180808261079}
-  - {fileID: 4616986051758280684}
+  - {fileID: 6989702475400614666}
   - {fileID: 3018791819421413494}
   - {fileID: 2115824736306100498}
-  - {fileID: 6989702475400614666}
-  - {fileID: 6950755564028211872}
-  - {fileID: 2100469326122307072}
+  - {fileID: 9210383180808261079}
+  - {fileID: 4616986051758280684}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1444,6 +1444,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   options: []
+  switchTog: {fileID: 5750445833878081179}
+  AirOutSettingBtn: {fileID: 4360305417317888463}
+  otherSettingBtn: {fileID: 314000967201092420}
+  airVolumeSld: {fileID: 8367966912273108361}
+  richnessSld: {fileID: 8384246042331503409}
 --- !u!222 &4804944860897074351
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1496,7 +1501,7 @@ GameObject:
   - component: {fileID: 3038401587471856470}
   - component: {fileID: 4360305417317888463}
   m_Layer: 5
-  m_Name: Setting
+  m_Name: AirOutSettingBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1752,17 +1757,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8123123724316729588}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6991541330409170703}
+  m_Father: {fileID: 4616986051758280684}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 463.00244, y: -131}
-  m_SizeDelta: {x: 30.3746, y: 33.6066}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 13.951965, y: -1.9450226}
+  m_SizeDelta: {x: 30.374603, y: 33.6066}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &325022885486920499
 CanvasRenderer:
