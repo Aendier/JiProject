@@ -12,6 +12,7 @@ public abstract  class PanelOption : MonoBehaviour
 
     public event Action onChoose;
     public event Action onCancleChoose;
+    public event Action onEnter;
     protected virtual void Awake()
     {
         oL = hightLightItem.gameObject.AddComponent<Outline>();
@@ -20,7 +21,10 @@ public abstract  class PanelOption : MonoBehaviour
         oL.enabled = false;
     }
 
-    public abstract void OnEnter();
+    public virtual void OnEnter()
+    {
+        onEnter?.Invoke();
+    }
     
 
     public virtual void OnChoose() 
@@ -43,8 +47,3 @@ public abstract  class PanelOption : MonoBehaviour
     public abstract void ChangeValue(float value);
 }
 
-public enum OptionType
-{
-    Button,
-    Slider
-}

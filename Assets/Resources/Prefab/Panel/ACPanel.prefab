@@ -493,7 +493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2115824736306100498}
-  - component: {fileID: 3609394092666598821}
+  - component: {fileID: 7427346702912133494}
   - component: {fileID: 2110143215267565985}
   - component: {fileID: 8774319766512540053}
   - component: {fileID: 314000967201092420}
@@ -524,7 +524,7 @@ RectTransform:
   m_AnchoredPosition: {x: -456, y: -130.23445}
   m_SizeDelta: {x: 171.8933, y: 31.4648}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3609394092666598821
+--- !u!114 &7427346702912133494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2177133022802039194}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d09d3e14099aeae499938fe6112df186, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f9b13b9d2dfc0640bb91012cbd42fa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!222 &2110143215267565985
@@ -1444,9 +1444,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   options: []
+  defaultOptionIndex: 0
   switchTog: {fileID: 5750445833878081179}
-  AirOutSettingBtn: {fileID: 4360305417317888463}
-  otherSettingBtn: {fileID: 314000967201092420}
+  airOutSettingBtn: {fileID: 6864411385441831641}
+  otherSettingBtn: {fileID: 7427346702912133494}
   airVolumeSld: {fileID: 8367966912273108361}
   richnessSld: {fileID: 8384246042331503409}
 --- !u!222 &4804944860897074351
@@ -1496,7 +1497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3018791819421413494}
-  - component: {fileID: 4408786290046839105}
+  - component: {fileID: 6864411385441831641}
   - component: {fileID: 3124269057666837543}
   - component: {fileID: 3038401587471856470}
   - component: {fileID: 4360305417317888463}
@@ -1527,7 +1528,7 @@ RectTransform:
   m_AnchoredPosition: {x: -456, y: -66.256}
   m_SizeDelta: {x: 171.8933, y: 31.4648}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4408786290046839105
+--- !u!114 &6864411385441831641
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1536,7 +1537,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6617461027571043853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d09d3e14099aeae499938fe6112df186, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f9b13b9d2dfc0640bb91012cbd42fa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!222 &3124269057666837543

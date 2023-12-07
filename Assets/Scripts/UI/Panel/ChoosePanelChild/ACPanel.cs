@@ -7,26 +7,40 @@ public class ACPanel : BasePanel
 {
     public Toggle switchTog;
 
-    public Button AirOutSettingBtn;
-    public Button otherSettingBtn;
+    public ScrollOption airOutSettingBtn;
+    public ScrollOption otherSettingBtn;
 
     public Slider airVolumeSld;
     public Slider richnessSld;
     public override void Init()
     {
-        AirOutSettingBtn.onClick.AddListener(() =>
+        airOutSettingBtn.onChoose += () =>
         {
             UIManager.Instance.ShowPanel<AirOutSettingPanel>();
-        });
-        otherSettingBtn.onClick.AddListener(() =>
+        };
+        otherSettingBtn.onChoose += () =>
         {
             UIManager.Instance.ShowPanel<AcOtherSettingPanel>();
-        });
-    }
+        }; 
 
-    // Start is called before the first frame update
-    protected override void Start()
-    {
-        base.Start();
+        airOutSettingBtn.onEnter += () =>
+        {
+            PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<AirOutSettingPanel>(),false);
+            UIManager.Instance.GetPanel<AirOutSettingPanel>().ShowMe() ;
+        };
+        otherSettingBtn.onEnter += ()=>
+        {
+            PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<AcOtherSettingPanel>(), false);
+            UIManager.Instance.GetPanel<AcOtherSettingPanel>().ShowMe();
+        };
+
+        airOutSettingBtn.onCancleChoose += () =>
+        {
+            UIManager.Instance.GetPanel<AirOutSettingPanel>().HideMe(null);
+        };
+        otherSettingBtn.onCancleChoose += () =>
+        {
+            UIManager.Instance.GetPanel<AcOtherSettingPanel>().HideMe(null);
+        };
     }
 }

@@ -8,47 +8,52 @@ public class MusicPanel : BasePanel
     public Slider volumeSlider;
     public Toggle switchToggle;
 
-    public Button myFavoriteBtn;
-    public Button playModeBtn;
-    public Button otherSettingBtn;
-
-    private MyFavoritePanel myFavoritePanel;
-    private PlayModePanel playModePanel;
-    private MusicOtherSettingPanel musicOtherSettingPanel;
+    public ScrollOption myFavoriteBtn;
+    public ScrollOption playModeBtn;
+    public ScrollOption otherSettingBtn;
 
     public override void Init()
     {
-        myFavoriteBtn.onClick.AddListener(() =>
+        myFavoriteBtn.onChoose += () =>
         {
-            if (myFavoritePanel != null)
-                myFavoritePanel.ShowMe();
-            else
-                myFavoritePanel = UIManager.Instance.ShowPanel<MyFavoritePanel>();
-            HideMe(null);
-        });
-
-        playModeBtn.onClick.AddListener(() =>
+            UIManager.Instance.ShowPanel<MyFavoritePanel>();
+        };
+        playModeBtn.onChoose += () =>
         {
-            if (playModePanel != null)
-                playModePanel.ShowMe();
-            else
-                playModePanel = UIManager.Instance.ShowPanel<PlayModePanel>();
-            HideMe(null);
-        });
-
-        otherSettingBtn.onClick.AddListener(() =>
+            UIManager.Instance.ShowPanel<PlayModePanel>();
+        };
+        otherSettingBtn.onChoose += () =>
         {
-            if (musicOtherSettingPanel != null)
-                musicOtherSettingPanel.ShowMe();
-            else
-                musicOtherSettingPanel = UIManager.Instance.ShowPanel<MusicOtherSettingPanel>();
-            HideMe(null);
-        });
-    }
+            UIManager.Instance.ShowPanel<MusicOtherSettingPanel>();
+        };
 
-    // Start is called before the first frame update
-    protected override void Start()
-    {
-        base.Start();
+        myFavoriteBtn.onEnter += () =>
+        {
+            PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<MyFavoritePanel>(), false);
+            UIManager.Instance.ShowPanel<MyFavoritePanel>();
+        };
+        playModeBtn.onEnter += () =>
+        {
+            PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<PlayModePanel>(), false);
+            UIManager.Instance.ShowPanel<PlayModePanel>();
+        };
+        otherSettingBtn.onEnter += () =>
+        {
+            PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<MusicOtherSettingPanel>(), false);
+            UIManager.Instance.ShowPanel<MusicOtherSettingPanel>();
+        };
+
+        myFavoriteBtn.onCancleChoose += () =>
+        {
+            UIManager.Instance.GetPanel<MyFavoritePanel>().HideMe(null);
+        };
+        playModeBtn.onCancleChoose += () =>
+        {
+            UIManager.Instance.GetPanel<PlayModePanel>().HideMe(null);
+        };
+        otherSettingBtn.onCancleChoose += () =>
+        {
+            UIManager.Instance.GetPanel<MusicOtherSettingPanel>().HideMe(null);
+        };
     }
 }

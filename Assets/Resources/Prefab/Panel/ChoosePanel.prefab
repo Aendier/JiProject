@@ -190,11 +190,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   options: []
-  phoneBtn: {fileID: 1824485529136957656}
-  ACBtn: {fileID: 1397421238300951974}
-  MapBtn: {fileID: 7535674239490921157}
-  MusicBtn: {fileID: 7575117893130124017}
-  RadioBtn: {fileID: 3546794278727349850}
+  defaultOptionIndex: 2
+  phoneBtn: {fileID: 1826950117965001782}
+  ACBtn: {fileID: 4011106007940165416}
+  MapBtn: {fileID: 4942792997292435011}
+  MusicBtn: {fileID: 7229885787064850780}
+  RadioBtn: {fileID: 6817154952129201825}
 --- !u!222 &6447448310515332311
 CanvasRenderer:
   m_ObjectHideFlags: 0

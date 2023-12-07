@@ -6,7 +6,6 @@ public class MyFavoritePanel : BasePanel
 {
     public override void Init()
     {
-        throw new System.NotImplementedException();
     }
 
 

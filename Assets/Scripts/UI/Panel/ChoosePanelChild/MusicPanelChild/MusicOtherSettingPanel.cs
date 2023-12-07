@@ -6,7 +6,6 @@ public class MusicOtherSettingPanel : BasePanel
 {
     public override void Init()
     {
-        throw new System.NotImplementedException();
     }
 
 

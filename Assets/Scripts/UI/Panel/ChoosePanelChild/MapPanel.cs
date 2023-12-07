@@ -7,49 +7,66 @@ public class MapPanel : BasePanel
 {
     public Toggle SwitchTog;
 
-    public ButtonOption checkRouteBtn;
-    public ButtonOption historicalRouteBtn;
-    public ButtonOption otherSettingBtn;
+    public ScrollOption checkRouteBtn;
+    public ScrollOption historicalRouteBtn;
+    public ScrollOption otherSettingBtn;
 
     public Slider richnessSld;
-
-    private CheckRoutePanel checkRoutePanel;
-    private HistoryPanel historyPanel;
-    private MapOtherSettingPanel otherSettingPanel;
 
 
     public override void Init()
     {
-
+        //选择
         checkRouteBtn.onChoose += () =>
         {
-            if (checkRoutePanel != null)
-                checkRoutePanel.ShowMe();
-            else
-                checkRoutePanel = UIManager.Instance.ShowPanel<CheckRoutePanel>();
+            UIManager.Instance.ShowPanel<CheckRoutePanel>();
         };
-        
 
         historicalRouteBtn.onChoose += () =>
         {
-            if (historyPanel != null)
-                historyPanel.ShowMe();
-            else
-                historyPanel = UIManager.Instance.ShowPanel<HistoryPanel>();
+            UIManager.Instance.ShowPanel<HistoryPanel>();
         };
 
         otherSettingBtn.onChoose += () =>
         {
-            if (otherSettingPanel != null)
-                otherSettingPanel.ShowMe();
-            else
-                otherSettingPanel = UIManager.Instance.ShowPanel<MapOtherSettingPanel>();
+            UIManager.Instance.ShowPanel<MapOtherSettingPanel>();
         };
-    }
 
-    // Start is called before the first frame update
-    protected override void Start()
-    {
-        base.Start();
+        //进入
+        checkRouteBtn.onEnter += () =>
+        {
+            PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<CheckRoutePanel>(), false);
+            UIManager.Instance.GetPanel<CheckRoutePanel>().ShowMe();
+        };
+
+        historicalRouteBtn.onEnter += () =>
+        {
+            PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<HistoryPanel>(), false);
+            UIManager.Instance.GetPanel<HistoryPanel>().ShowMe();
+        };
+
+        otherSettingBtn.onEnter += () =>
+        {
+            PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<MapOtherSettingPanel>(), false);
+            UIManager.Instance.GetPanel<MapOtherSettingPanel>().ShowMe();
+        };
+
+
+        //取消选择
+        checkRouteBtn.onCancleChoose += () =>
+        {
+            UIManager.Instance.GetPanel<CheckRoutePanel>().HideMe(null);
+        };
+
+        historicalRouteBtn.onCancleChoose += () =>
+        {
+            UIManager.Instance.GetPanel<HistoryPanel>().HideMe(null);
+        };
+
+        otherSettingBtn.onCancleChoose += () =>
+        {
+            UIManager.Instance.GetPanel<MapOtherSettingPanel>().HideMe(null);
+        };
+
     }
 }

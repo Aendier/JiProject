@@ -8,25 +8,17 @@ using JetBrains.Annotations;
 
 public class MenuPanel : BasePanel
 {
-    public Button btnMenu;
-    private ChoosePanel choosePanel;
+    public ButtonOption choosePanelBtn;
     public override void Init()
     {
-        btnMenu.onClick.AddListener(() =>
+        Debug.Log("init");
+        Debug.Log(choosePanelBtn);
+        choosePanelBtn.onEnter += () =>
         {
-            Debug.Log("ChooseBtn OnClick");
-            //显示选择面板
-            if (choosePanel != null)
-            {
-                choosePanel.ShowMe();
-            }
-            else 
-            {
-                choosePanel = UIManager.Instance.ShowPanel<ChoosePanel>();
-            }
-            //隐藏自己
+            Debug.Log("enter");
+            PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<ChoosePanel>(), false);
             HideMe(null);
-        });
+        };
     }
 }
    

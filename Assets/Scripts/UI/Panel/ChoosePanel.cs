@@ -5,67 +5,36 @@ using UnityEngine.UI;
 
 public class ChoosePanel : BasePanel
 {
-    public Button phoneBtn;
-    public Button ACBtn;
-    public Button MapBtn;
-    public Button MusicBtn;
-    public Button RadioBtn;
-
-    private PhonePanel phonePanel;
-    private ACPanel acPanel;
-    private MapPanel mapPanel;
-    private MusicPanel musicPanel;
-    private RadioPanel radioPanel;
+    public ButtonOption phoneBtn;
+    public ButtonOption ACBtn;
+    public ButtonOption MapBtn;
+    public ButtonOption MusicBtn;
+    public ButtonOption RadioBtn;
 
     public override void Init()
     {
-        phoneBtn.onClick.AddListener(() =>
+        phoneBtn.onEnter += () =>
         {
-            if (phonePanel != null)
-                phonePanel.ShowMe();
-            else
-                phonePanel = UIManager.Instance.ShowPanel<PhonePanel>();
-            HideMe(null);
-        });
-
-        ACBtn.onClick.AddListener(() =>
+            PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<PhonePanel>());
+        };
+        ACBtn.onEnter += () =>
         {
-            if (acPanel != null)
-                acPanel.ShowMe();
-            else
-                acPanel = UIManager.Instance.ShowPanel<ACPanel>();
-            HideMe(null);
-        });
-
-        MapBtn.onClick.AddListener(() =>
+            PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<ACPanel>());
+        };
+        MapBtn.onEnter += () =>
         {
-            if (mapPanel != null)
-                mapPanel.ShowMe();
-            else
-                mapPanel = UIManager.Instance.ShowPanel<MapPanel>();
-            HideMe(null);
-        });
-
-        MusicBtn.onClick.AddListener(() =>
+            PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<MapPanel>());
+        };
+        MusicBtn.onEnter += () =>
         {
-            if (musicPanel != null)
-                musicPanel.ShowMe();
-            else
-                musicPanel = UIManager.Instance.ShowPanel<MusicPanel>();
-            HideMe(null);
-        });
-
-        RadioBtn.onClick.AddListener(() =>
+            PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<MusicPanel>());
+        };
+        RadioBtn.onEnter += () =>
         {
-            if (radioPanel != null)
-                radioPanel.ShowMe();
-            else
-                radioPanel = UIManager.Instance.ShowPanel<RadioPanel>();
-            HideMe(null);
-        });
+            PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<RadioPanel>());
+        };
     }
 
-    // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();

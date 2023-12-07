@@ -12,7 +12,8 @@ public class GlobalManager : MonoBehaviour
 
     private void Start()
     {
-        UIManager.Instance.ShowPanel<MenuPanel>();
+        //UIManager.Instance.ShowPanel<MenuPanel>();
         PanelController.intstance.Init();
+        PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<MenuPanel>());
     }
 }

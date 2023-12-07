@@ -27,13 +27,15 @@ public class UIManager
     //显示面板
     public T ShowPanel<T>() where T : BasePanel
     {
-        Debug.Log("Show~~~"+typeof(T).Name);
         //我们只需要保证 泛型T的类型 和 面板明 一致  定一个这样的规则 就非常方便我们的使用
         string panelName = typeof(T).Name;
 
         //是否已经有显示着的该面板了 如果有 不用创建 直接返回给外部使用
         if (panelDic.ContainsKey(panelName))
+        {
+            panelDic[panelName].ShowMe();
             return panelDic[panelName] as T;
+        }
 
         //显示面板 就是 动态的创建面板预设体 设置父对象
         //根据得到的 类名 就是我们的预设体面板明 直接 动态创建它 即可

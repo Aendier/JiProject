@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class PanelController : MonoBehaviour
 {
     public static PanelController intstance;
 
-    public BasePanel previousPanel;
+    public Stack<BasePanel> previousPanel = new Stack<BasePanel>();
     public BasePanel currentPanel;
 
     public int currentOptionIndex;
@@ -49,7 +50,6 @@ public class PanelController : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    Debug.Log("Selecting Enter");
                     EnterOption();
                 }
 
@@ -79,15 +79,53 @@ public class PanelController : MonoBehaviour
                     ReturnOption();
                 }
                 break;
+
+            case ChooseState.Scroll:
+                if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W))
+                {
+                    Debug.Log("下一个");
+                    currentOptionIndex--;
+                    ChooseOption(currentOptionIndex);
+                    currentOption.transform.parent.GetComponent<RectTransform>().localPosition +=new Vector3(0,
+                        - currentOption.transform.parent.GetComponent<RectTransform>().rect.height/ currentOption.transform.parent.childCount,
+                        0);
+                }
+
+                if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+                {
+                    Debug.Log("上一个");
+                    currentOptionIndex++;
+                    ChooseOption(currentOptionIndex);
+                    currentOption.transform.parent.GetComponent<RectTransform>().localPosition += new Vector3(0,
+                        currentOption.transform.parent.GetComponent<RectTransform>().rect.height / currentOption.transform.parent.childCount,
+                        0);
+                }
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    EnterOption();
+                }
+
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    state = ChooseState.Selecting;
+                    ReturnPanel();
+                }
+                break;
         }
     }
 
     public void ReturnPanel()
     {
-        if(previousPanel != null)
+        if(previousPanel.Count > 1)
         {
-            previousPanel.ShowMe();
-            previousPanel.HideMe(null);
+            previousPanel.Pop();
+            BasePanel panel = previousPanel.Peek();
+            Debug.Log("返回面板" + panel);
+            SetCurrentPanel(panel,true,false);
+        }
+        else
+        {
+            Debug.LogError("没有可以返回的面板");
         }
     }
 
@@ -95,12 +133,32 @@ public class PanelController : MonoBehaviour
     {
         state = ChooseState.Selecting;
     }
-    public void SetCurrentPanel(BasePanel panel)
+
+    public void SetCurrentPanel(BasePanel panel,bool hideSelf = true,bool save = true)
     {
-        currentOptionIndex = panel.defaultOptionIndex;
-        previousPanel = currentPanel;
+        if (currentOption != null) 
+        {
+            currentOption.OnCancleChoose();
+        }
+        
+        //对当前面板的处理
+        if(currentPanel != null)
+        {
+            currentPanel.defaultOptionIndex = currentOptionIndex;
+            if (hideSelf)
+            {
+                currentPanel.HideMe(null);
+            }
+        }
+        if (save)
+        {
+            previousPanel.Push(panel);
+        }
+        //对新面板的处理
         currentPanel = panel;
-        currentOption = currentPanel.options[panel.defaultOptionIndex];
+        panel.ShowMe();
+        currentOptionIndex = panel.defaultOptionIndex;
+        ChooseOption(currentOptionIndex);
     }
 
     public void ChooseOption(int index)
@@ -131,7 +189,7 @@ public class PanelController : MonoBehaviour
     public void EnterOption()
     {
         if (currentOption == null) return;
-        Debug.Log("Enter Option");
+        Debug.Log("Enter Option--"+currentOption.name);
         currentOption.OnEnter();
     }
 }
@@ -139,5 +197,6 @@ public class PanelController : MonoBehaviour
 public enum ChooseState
 {
     Selecting,
-    Slide
+    Slide,
+    Scroll
 }

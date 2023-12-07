@@ -6,7 +6,6 @@ public class PlayModePanel : BasePanel
 {
     public override void Init()
     {
-        throw new System.NotImplementedException();
     }
 
 

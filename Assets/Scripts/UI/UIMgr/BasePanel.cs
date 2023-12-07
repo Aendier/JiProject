@@ -52,8 +52,6 @@ using UnityEngine.Events;
     {
         Debug.Log("Show---" + name);
         isShow = true;
-        PanelController.intstance.SetCurrentPanel(this);
-        PanelController.intstance.ChooseOption(0);   
         canvasGroup.alpha = 0;
     }
     /// <summary>
