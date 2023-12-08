@@ -36,7 +36,7 @@ public abstract  class PanelOption : MonoBehaviour
         onChoose?.Invoke();
     }
 
-    public virtual void OnCancleChoose()
+    public virtual void OnCancelChoose()
     {
         if (oL != null)
         {

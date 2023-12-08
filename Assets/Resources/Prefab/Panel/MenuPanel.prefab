@@ -341,8 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220889364a62d4d46903b4b6812341b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  options: []
-  defaultOptionIndex: 0
+  defaultOptionIndex: {x: 0, y: 0}
   choosePanelBtn: {fileID: 3536924324336750306}
 --- !u!222 &3635513457807107652
 CanvasRenderer:

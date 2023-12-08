@@ -7,6 +7,4 @@ public class MusicOtherSettingPanel : BasePanel
     public override void Init()
     {
     }
-
-
 }

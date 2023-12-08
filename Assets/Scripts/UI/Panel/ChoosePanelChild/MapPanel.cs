@@ -5,15 +5,23 @@ using UnityEngine.UI;
 
 public class MapPanel : BasePanel
 {
-    public Toggle SwitchTog;
+    public ToggleOption SwitchTog;
 
     public ScrollOption checkRouteBtn;
     public ScrollOption historicalRouteBtn;
     public ScrollOption otherSettingBtn;
 
-    public Slider richnessSld;
+    public SliderOption richnessSld;
 
-
+    protected override void Awake()
+    {
+        base.Awake();
+        options = new PanelOption[][]
+        {
+            new PanelOption[] { SwitchTog, checkRouteBtn, historicalRouteBtn, otherSettingBtn},
+            new PanelOption[] { richnessSld }
+        };
+    }
     public override void Init()
     {
         //Ñ¡Ôñ

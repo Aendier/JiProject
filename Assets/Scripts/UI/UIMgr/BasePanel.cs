@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,9 +17,8 @@ using UnityEngine.Events;
     //当自己淡出成功时 要执行的委托函数
     private UnityAction hideCallBack;
 
-    public PanelOption[] options;
-
-    public int defaultOptionIndex = 0;
+    public PanelOption[][] options;
+    public Vector2Int defaultOptionIndex = new Vector2Int(0,0);
     
     protected virtual void Awake()
     {   //一开始获取面板上 挂载的组件 如果没有 我们通过代码 为它添加一个
@@ -27,17 +27,21 @@ using UnityEngine.Events;
         {
             canvasGroup = this.gameObject.AddComponent<CanvasGroup>();
         }
-
-        options = GetComponentsInChildren<PanelOption>();
-        if (defaultOptionIndex <0 || defaultOptionIndex >= options.Length)
-        {
-            defaultOptionIndex = 0;
-        }
     }
     // Start is called before the first frame update
     protected virtual void Start()
     {
         Init();
+    }
+
+    public PanelOption ChooseOption(Vector2Int index)
+    {
+        
+        index.x = Mathf.Clamp(index.x, 0, options.GetLength(0) - 1);
+
+        index.y = Mathf.Clamp(index.y, 0, options[index.x].GetLength(0)-1);
+        PanelController.intstance.currentOptionIndex = index;
+        return options[index.x][index.y];
     }
 
     /// <summary>   

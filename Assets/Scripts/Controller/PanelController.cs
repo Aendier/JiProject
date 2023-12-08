@@ -13,7 +13,7 @@ public class PanelController : MonoBehaviour
     public Stack<BasePanel> previousPanel = new Stack<BasePanel>();
     public BasePanel currentPanel;
 
-    public int currentOptionIndex;
+    public Vector2Int currentOptionIndex = new Vector2Int(0,0);
     public PanelOption currentOption;
 
     public RectTransform cursor;
@@ -26,7 +26,6 @@ public class PanelController : MonoBehaviour
     }
     public void Init()
     {
-        currentOptionIndex = 0;
         
     }
     private void Update()
@@ -34,19 +33,37 @@ public class PanelController : MonoBehaviour
         switch (state)
         {
             case ChooseState.Selecting:
-                if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W))
+                if (Input.GetKeyDown(KeyCode.W) )
                 {
-                    Debug.Log("下一个");
-                    currentOptionIndex--;
+                    Debug.Log("向上");
+                    currentOptionIndex.y--;
                     ChooseOption(currentOptionIndex);
                 }
 
-                if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+                if (Input.GetKeyDown(KeyCode.S))
                 {
-                    Debug.Log("上一个");
-                    currentOptionIndex++;
+                    Debug.Log("向下");
+                    currentOptionIndex.y++;
                     ChooseOption(currentOptionIndex);
+
                 }
+
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    Debug.Log("向左");
+                    currentOptionIndex.x--;
+                    ChooseOption(currentOptionIndex);
+
+
+                }
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    Debug.Log("向右");
+                    currentOptionIndex.x++;
+                    ChooseOption(currentOptionIndex);                  
+                }
+
+
 
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
@@ -84,7 +101,7 @@ public class PanelController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W))
                 {
                     Debug.Log("下一个");
-                    currentOptionIndex--;
+                    currentOptionIndex.y--;
                     ChooseOption(currentOptionIndex);
                     currentOption.transform.parent.GetComponent<RectTransform>().localPosition +=new Vector3(0,
                         - currentOption.transform.parent.GetComponent<RectTransform>().rect.height/ currentOption.transform.parent.childCount,
@@ -94,7 +111,7 @@ public class PanelController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
                 {
                     Debug.Log("上一个");
-                    currentOptionIndex++;
+                    currentOptionIndex.y++;
                     ChooseOption(currentOptionIndex);
                     currentOption.transform.parent.GetComponent<RectTransform>().localPosition += new Vector3(0,
                         currentOption.transform.parent.GetComponent<RectTransform>().rect.height / currentOption.transform.parent.childCount,
@@ -138,7 +155,7 @@ public class PanelController : MonoBehaviour
     {
         if (currentOption != null) 
         {
-            currentOption.OnCancleChoose();
+            currentOption.OnCancelChoose();
         }
         
         //对当前面板的处理
@@ -158,29 +175,29 @@ public class PanelController : MonoBehaviour
         currentPanel = panel;
         panel.ShowMe();
         currentOptionIndex = panel.defaultOptionIndex;
-        ChooseOption(currentOptionIndex);
+        Debug.Log(currentOptionIndex.x+"11111" + currentOptionIndex.y);
+        if(currentPanel.options.Length > 0)
+        {
+            ChooseOption(currentOptionIndex);
+
+        }
+        else
+        {
+            currentOption = null;
+        }
     }
 
-    public void ChooseOption(int index)
+    public void ChooseOption(Vector2Int index)
     {
-        if (index < 0)
-        {
-            Debug.Log("太小了");
-            currentOptionIndex = 0;
-            return;
-        }
-        if (index >= currentPanel.options.Length)
-        {
-            Debug.Log("太大了");
-            currentOptionIndex = currentPanel.options.Length - 1;
-            return;
-        }
+        Debug.Log("ChooseOption");
+        Debug.Log(index.x+ "---" +index.y);
         if(currentOption != null)
         {
-            currentOption.OnCancleChoose();
+            currentOption.OnCancelChoose();
         }
 
-        currentOption = currentPanel.options[currentOptionIndex];
+        
+        currentOption = currentPanel.ChooseOption(index);
         currentOption.OnChoose();
 
         Debug.Log("当前选项为：" + currentOption.name);

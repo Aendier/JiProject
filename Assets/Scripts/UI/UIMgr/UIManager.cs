@@ -21,7 +21,6 @@ public class UIManager
         canvasTrans = GameObject.Find("Canvas").transform;
         //让 Canvas对象 过场景 不移除 
         //我们都是通过 动态创建 和 动态删除 来显示 隐藏面板的 所以不删除它 影响不大
-        GameObject.DontDestroyOnLoad(canvasTrans.gameObject);
     }
 
     //显示面板
@@ -91,5 +90,15 @@ public class UIManager
 
         //如果没有 直接返回空
         return null;
+    }
+
+    //关闭所有面板
+    public void CloseAllPanel()
+    {
+        foreach (var panel in panelDic.Values)
+        {
+            panel.HideMe(null);
+        }
+        panelDic.Clear();
     }
 }

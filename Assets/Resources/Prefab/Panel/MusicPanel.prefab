@@ -1139,10 +1139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c1da531a334ce48a7cb63c67e69a2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  options: []
-  defaultOptionIndex: 0
-  volumeSlider: {fileID: 8367966912273108361}
-  switchToggle: {fileID: 4360096332674493817}
+  defaultOptionIndex: {x: 0, y: 0}
+  volumeSlider: {fileID: 5026295562541736748}
+  switchToggle: {fileID: 6067510762257401292}
   myFavoriteBtn: {fileID: 4708556454285498627}
   playModeBtn: {fileID: 1149000819217516891}
   otherSettingBtn: {fileID: 5545812351332495663}

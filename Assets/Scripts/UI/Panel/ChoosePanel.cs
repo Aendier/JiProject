@@ -11,6 +11,19 @@ public class ChoosePanel : BasePanel
     public ButtonOption MusicBtn;
     public ButtonOption RadioBtn;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        options = new PanelOption[][]
+        {
+            new PanelOption[]{phoneBtn},
+            new PanelOption[]{ACBtn},
+            new PanelOption[]{MapBtn},
+            new PanelOption[]{MusicBtn},
+            new PanelOption[]{RadioBtn}
+        };
+    }
+
     public override void Init()
     {
         phoneBtn.onEnter += () =>

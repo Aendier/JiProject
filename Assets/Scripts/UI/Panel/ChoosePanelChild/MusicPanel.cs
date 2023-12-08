@@ -5,13 +5,23 @@ using UnityEngine.UI;
 
 public class MusicPanel : BasePanel
 {
-    public Slider volumeSlider;
-    public Toggle switchToggle;
+    public SliderOption volumeSlider;
+    public ToggleOption switchToggle;
 
     public ScrollOption myFavoriteBtn;
     public ScrollOption playModeBtn;
     public ScrollOption otherSettingBtn;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        options = new PanelOption[][]
+        {
+            new PanelOption[] { switchToggle, myFavoriteBtn, playModeBtn, otherSettingBtn},
+            new PanelOption[] { volumeSlider }
+
+        };
+    }
     public override void Init()
     {
         myFavoriteBtn.onChoose += () =>

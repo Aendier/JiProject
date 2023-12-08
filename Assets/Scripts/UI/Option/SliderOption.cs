@@ -7,12 +7,13 @@ using UnityEngine.UI;
 public class SliderOption : PanelOption
 {
     private Slider slider;
-
+    private int changedCount;
     protected override void Awake()
     {
         slider = GetComponent<Slider>();
         hightLightItem = TransformHelper.GetChild(transform, "Handle");
         base.Awake();
+        changedCount = 0;
     }
 
     public override void OnEnter()
@@ -24,7 +25,12 @@ public class SliderOption : PanelOption
     {
         if (slider != null)
         {
+            changedCount++;
             slider.value += value/100;
+            if (changedCount >= 3)
+            {
+                MissionSystem.instance.EndMission(slider.name);
+            }
         }
     }
 }

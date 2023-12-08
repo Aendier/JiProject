@@ -1139,13 +1139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2978b0269b712ee4f8ba2f23dcf5e968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  options: []
-  defaultOptionIndex: 0
-  SwitchTog: {fileID: 4139424411410384829}
+  defaultOptionIndex: {x: 0, y: 0}
+  SwitchTog: {fileID: 7852586737436675087}
   checkRouteBtn: {fileID: 181881285879102118}
   historicalRouteBtn: {fileID: 1451572619691827077}
   otherSettingBtn: {fileID: 7619912948424692143}
-  richnessSld: {fileID: 8367966912273108361}
+  richnessSld: {fileID: 5966374816080876563}
 --- !u!222 &4804944860897074351
 CanvasRenderer:
   m_ObjectHideFlags: 0

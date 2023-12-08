@@ -5,13 +5,23 @@ using UnityEngine.UI;
 
 public class ACPanel : BasePanel
 {
-    public Toggle switchTog;
+    public ToggleOption switchTog;
 
     public ScrollOption airOutSettingBtn;
     public ScrollOption otherSettingBtn;
 
-    public Slider airVolumeSld;
-    public Slider richnessSld;
+    public SliderOption airVolumeSld;
+    public SliderOption richnessSld;
+    protected override void Awake()
+    {
+        base.Awake();
+        options = new PanelOption[][]
+        {
+            new PanelOption[] { switchTog, airOutSettingBtn, otherSettingBtn},
+            new PanelOption[] { airVolumeSld, richnessSld }
+            //new PanelOption[] {  }
+        };
+    }
     public override void Init()
     {
         airOutSettingBtn.onChoose += () =>

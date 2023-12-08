@@ -9,13 +9,24 @@ using JetBrains.Annotations;
 public class MenuPanel : BasePanel
 {
     public ButtonOption choosePanelBtn;
+
+    protected override void Awake()
+    {
+        options = new PanelOption[][]{
+            new PanelOption[] { choosePanelBtn}
+        };
+        base.Awake();
+
+        Debug.Log("666");
+        Debug.Log(options[0][0].name);
+    }
     public override void Init()
     {
-        Debug.Log("init");
-        Debug.Log(choosePanelBtn);
+
         choosePanelBtn.onEnter += () =>
         {
             Debug.Log("enter");
+            MissionSystem.instance.StartMission();
             PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<ChoosePanel>(), false);
             HideMe(null);
         };
