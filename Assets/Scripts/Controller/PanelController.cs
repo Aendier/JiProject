@@ -117,6 +117,7 @@ public class PanelController : MonoBehaviour
                         currentOption.transform.parent.GetComponent<RectTransform>().rect.height / currentOption.transform.parent.childCount,
                         0);
                 }
+
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     EnterOption();

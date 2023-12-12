@@ -17,7 +17,7 @@ public abstract  class PanelOption : MonoBehaviour
     {
         oL = hightLightItem.gameObject.AddComponent<Outline>();
         oL.effectDistance = new Vector2(3, 3);
-        oL.effectColor = Color.black;
+        oL.effectColor = Color.green;
         oL.enabled = false;
     }
 

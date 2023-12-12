@@ -20,5 +20,6 @@ public class ButtonOption : PanelOption
 
     public override void ChangeValue(float value)
     {
+
     }
 }

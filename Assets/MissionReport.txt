@@ -1,0 +1,24 @@
+[ID : 0]---开始任务
+[ID : 0]---00:00:03---Canvas-AirOutSettingPanel(Clone)-Button (Legacy)
+[ID : 1]---开始任务
+[ID : 1]---00:00:04---RichnessSld
+[ID : 2]---开始任务
+[ID : 2]---00:00:07---RichnessSld
+[ID : 3]---开始任务
+[ID : 3]---00:00:02---RichnessSld
+[ID : 4]---开始任务
+[ID : 4]---00:00:07---RichnessSld
+[ID : 5]---开始任务
+[ID : 5]---00:00:21---RichnessSld
+[ID : 6]---开始任务
+[ID : 6]---00:00:02---AirVolumeSld
+[ID : 7]---开始任务
+[ID : 7]---00:00:02---SwitchTog
+[ID : 8]---开始任务
+[ID : 8]---00:00:01---SwitchTog
+[ID : 9]---开始任务
+[ID : 9]---00:00:01---SwitchTog
+[ID : 10]---开始任务
+[ID : 10]---00:00:01---SwitchTog
+[ID : 11]---开始任务
+[ID : 11]---00:00:00---SwitchTog

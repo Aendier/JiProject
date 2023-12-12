@@ -21,5 +21,6 @@ public class ToggleOption : PanelOption
     public override void OnEnter()
     {
         toggle.isOn = !toggle.isOn;
+        MissionSystem.instance.EndMission(toggle.name);
     }
 }
