@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SliderOption : PanelOption
 {
     private Slider slider;
-    private int changedCount;
+    private float changedCount;
     protected override void Awake()
     {
         slider = GetComponent<Slider>();
@@ -25,9 +25,9 @@ public class SliderOption : PanelOption
     {
         if (slider != null)
         {
-            changedCount++;
+            changedCount+= value;
             slider.value += value/100;
-            if (changedCount >= 3)
+            if (Mathf.Abs(changedCount) >=  Mathf.Abs(value * 3))
             {
                 MissionSystem.instance.EndMission(slider.name);
             }

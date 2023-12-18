@@ -15,11 +15,12 @@ public class ButtonOption : PanelOption
     public override void OnEnter()
     {
         PanelController.intstance.state = ChooseState.Selecting;
+        MissionSystem.instance.RecordMission(transform.name);
         base.OnEnter();
     }
 
     public override void ChangeValue(float value)
     {
 
-    }
+    } 
 }

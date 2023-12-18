@@ -41,6 +41,21 @@ public class MissionSystem : MonoBehaviour
     public void StartMission()
     {
         isMissionStart = true;
+        missionId = PlayerPrefs.GetInt("MissionId", 0);
+        using (StreamWriter write = new StreamWriter(filePath, true))
+        {
+            write.WriteLine("[ID : " + missionId + "]" + "---" + "开始任务");
+        }
+        }
+
+    public void RecordMission(string missionName)
+    {
+        missionId = PlayerPrefs.GetInt("MissionId", 0);
+        using (StreamWriter write = new StreamWriter(filePath,true))
+        {
+            write.WriteLine("[ID : " + missionId + "]" + "---" + ConvertFloatToTimeString(missionEndTime) + "---" + missionName);
+        }
+
     }
 
     public void EndMission(string missionName)
@@ -50,8 +65,9 @@ public class MissionSystem : MonoBehaviour
         missionId = PlayerPrefs.GetInt("MissionId", 0);
         using (StreamWriter write = new StreamWriter(filePath,true))
         {
-            write.WriteLine("[ID : " + missionId + "]" + "---" + "开始任务");
             write.WriteLine("[ID : " + missionId +"]" + "---" + ConvertFloatToTimeString(missionEndTime) + "---" + missionName);
+            write.WriteLine("[ID : " + missionId + "]" + "---" + "结束任务");
+            write.WriteLine();
         }
         
         missionEndTime = 0;
@@ -68,8 +84,8 @@ public class MissionSystem : MonoBehaviour
         // 将浮点数转换为 TimeSpan 类型
         TimeSpan timeSpan = TimeSpan.FromSeconds(timeInSeconds);
 
-        // 使用 ToString 格式化为 HH:mm:ss 格式
-        string timeString = timeSpan.ToString(@"hh\:mm\:ss");
+        // 使用 ToString 格式化为 HH:mm:ss.fff 格式
+        string timeString = timeSpan.ToString(@"hh\:mm\:ss\.fff");
 
         return timeString;
     }

@@ -176,7 +176,6 @@ public class PanelController : MonoBehaviour
         currentPanel = panel;
         panel.ShowMe();
         currentOptionIndex = panel.defaultOptionIndex;
-        Debug.Log(currentOptionIndex.x+"11111" + currentOptionIndex.y);
         if(currentPanel.options.Length > 0)
         {
             ChooseOption(currentOptionIndex);
@@ -190,8 +189,6 @@ public class PanelController : MonoBehaviour
 
     public void ChooseOption(Vector2Int index)
     {
-        Debug.Log("ChooseOption");
-        Debug.Log(index.x+ "---" +index.y);
         if(currentOption != null)
         {
             currentOption.OnCancelChoose();

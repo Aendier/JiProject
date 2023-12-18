@@ -16,16 +16,12 @@ public class MenuPanel : BasePanel
             new PanelOption[] { choosePanelBtn}
         };
         base.Awake();
-
-        Debug.Log("666");
-        Debug.Log(options[0][0].name);
     }
     public override void Init()
     {
 
         choosePanelBtn.onEnter += () =>
         {
-            Debug.Log("enter");
             MissionSystem.instance.StartMission();
             PanelController.intstance.SetCurrentPanel(UIManager.Instance.ShowPanel<ChoosePanel>(), false);
             HideMe(null);
